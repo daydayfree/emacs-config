@@ -72,7 +72,7 @@
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing Ruby code" t)
 (add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/solarized")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-theme")
 (load-theme 'solarized-dark t)
 (setq solarized-termcolor 256)
 (setq solarized-degrade t)
