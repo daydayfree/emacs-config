@@ -17,3 +17,7 @@
     + highlight-chars
     + coffee-mode
     + sr-speedbar
+    + markdown-mode
+2. pylint
+    + flymake for Python
+
