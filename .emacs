@@ -1,21 +1,35 @@
-(global-font-lock-mode 1)
-(setq make-backup-files nil)
-(setq default-tab-width 4)
-(setq c-basic-offset 4)
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)
+(add-to-list 'load-path "~/.emacs.d/")
 
 (if (functionp 'tool-bar-mode) (tool-bar-mode 0))
 (if (functionp 'scroll-bar-mode) (scroll-bar-mode 0))
 
-(if (functionp 'set-frame-font) (set-frame-font "Monaco-14"))
-(if (functionp 'set-fontset-font)
-  (set-fontset-font
-  (frame-parameter nil 'font)
-  'han
-  (font-spec :family "Hiragino Sans GB")))
+(global-font-lock-mode 1)
+(setq make-backup-files nil)
+(setq default-tab-width 4)
+(setq c-basic-offset 4)
+(setq css-indent-offset 2)
+(setq sh-basic-offset 2)
+(setq line-number-mode t)
+(setq column-number-mode t)
+(setq visible-bell t)
+(setq delete-by-moving-to-trash t)
+(setq inhibit-startup-message t)
+(setq ns-command-modifier (quote meta))
+(setq transient-mark-mode t)
+(show-paren-mode t)
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+(set-default 'javascript-indent-level 2)
+(fset 'yes-or-no-p' 'y-or-n-p)
 
-(add-to-list 'load-path "~/.emacs.d")
+(set-default-font "Courier New-15")
+(set-fontset-font "fontset-default" 'gb18030' ("STHeiti" . "unicode-bmp"))
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(global-set-key (kbd "C-2") 'set-mark-command)
+(global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "M-t") 'complete-tag)
 
 (require 'sr-speedbar)
 (setq speedbar-frame-parameters
@@ -38,14 +52,6 @@
 ;(setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
-
-(setq visible-bell t)
-(setq default-major-mode 'text-mode)
-(show-paren-mode t)
-(setq show-paren-style 'parentheses)
-
-(global-set-key (kbd "C-2") 'set-mark-command)
-(global-set-key (kbd "M-g") 'goto-line)
 
 ;; Configure flymake for Python
 ;(setq pylint "/usr/local/bin/epylint")
@@ -72,8 +78,9 @@
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing Ruby code" t)
 (add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-theme")
-(load-theme 'solarized-dark t)
+(add-to-list 'load-path "~/.emacs.d/solarized")
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
 (setq solarized-termcolor 256)
 (setq solarized-degrade t)
 (setq solarized-bold nil)
@@ -84,9 +91,6 @@
 (setq tramp-chunksize 500)
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
-(require 'highlight-chars)
-(hc-toggle-highlight-trailing-whitespace t)
-
 (autoload 'markdown-mode "markdown-mode"
     "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
@@ -95,3 +99,11 @@
 
 (require 'slim-mode)
 (add-to-list 'auto-mode-alist '("\\.plim$" . slim-mode))
+
+(require 'fill-column-indicator)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
+(setq-default fci-rule-column 80)
+(setq fci-rule-width 1)
+(setq fci-rule-color "grey")
+
