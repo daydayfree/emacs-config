@@ -1,0 +1,16 @@
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/templates/movie/subject/rating_section.html
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_atemplates_amovie_asubject_arating__section.html#
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/templates/movie/subject/show.html
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_atemplates_amovie_asubject_ashow.html#
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/templates/movie/subject/baseinfo_section.html
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_atemplates_amovie_asubject_abaseinfo__section.html#
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/model/service/video/export.py
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_amodel_aservice_avideo_aexport.py#
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/model/tv/video_source.py
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_amodel_atv_avideo__source.py#
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/model/service/video/model.py
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_amodel_aservice_avideo_amodel.py#
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/view/subject/__init__.py
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_aview_asubject_a____init____.py#
+/ssh:vagrant@vagrant#2222:/home/vagrant/shire/movie/model/comment.py
+#_assh_bvagrant@vagrant#2222_b_ahome_avagrant_ashire_amovie_amodel_acomment.py#
